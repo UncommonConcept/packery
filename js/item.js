@@ -5,19 +5,19 @@
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /* globals define, module, require */
-  if ( typeof define == 'function' && define.amd ) {
+  if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      require('outlayer'),
+      require('./rect')
+    );
+  } else if ( typeof define == 'function' && define.amd ) {
     // AMD
     define( [
         'outlayer/outlayer',
         './rect'
       ],
       factory );
-  } else if ( typeof module == 'object' && module.exports ) {
-    // CommonJS
-    module.exports = factory(
-      require('outlayer'),
-      require('./rect')
-    );
   } else {
     // browser global
     window.Packery.Item = factory(

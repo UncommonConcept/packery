@@ -12,7 +12,16 @@
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /* globals define, module, require */
-  if ( typeof define == 'function' && define.amd ) {
+  if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      require('get-size'),
+      require('outlayer'),
+      require('./rect'),
+      require('./packer'),
+      require('./item')
+    );
+  } else if ( typeof define == 'function' && define.amd ) {
     // AMD
     define( [
         'get-size/get-size',
@@ -22,15 +31,6 @@
         './item'
       ],
       factory );
-  } else if ( typeof module == 'object' && module.exports ) {
-    // CommonJS
-    module.exports = factory(
-      require('get-size'),
-      require('outlayer'),
-      require('./rect'),
-      require('./packer'),
-      require('./item')
-    );
   } else {
     // browser global
     window.Packery = factory(

@@ -6,12 +6,12 @@
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /* globals define, module */
-  if ( typeof define == 'function' && define.amd ) {
-    // AMD
-    define( factory );
-  } else if ( typeof module == 'object' && module.exports ) {
+  if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory();
+  } else if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( factory );
   } else {
     // browser global
     window.Packery = window.Packery || {};

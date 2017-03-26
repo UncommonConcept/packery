@@ -6,14 +6,14 @@
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /* globals define, module, require */
-  if ( typeof define == 'function' && define.amd ) {
-    // AMD
-    define( [ './rect' ], factory );
-  } else if ( typeof module == 'object' && module.exports ) {
+  if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory(
       require('./rect')
     );
+  } else if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( [ './rect' ], factory );
   } else {
     // browser global
     var Packery = window.Packery = window.Packery || {};
