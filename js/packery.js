@@ -57,6 +57,7 @@ Rect.prototype.canFit = function( rect ) {
 // create an Outlayer layout class
 var Packery = Outlayer.create('packery');
 Packery.Item = Item;
+Packery.getSize = getSize;
 
 var proto = Packery.prototype;
 
