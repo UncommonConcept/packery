@@ -26,7 +26,7 @@
     );
   }
 
-}( window, function factory( Outlayer, Rect ) {
+}( typeof window !== "undefined" ? window : this || {}, function factory( Outlayer, Rect ) {
 'use strict';
 
 // -------------------------- Item -------------------------- //

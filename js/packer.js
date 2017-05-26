@@ -20,7 +20,7 @@
     Packery.Packer = factory( Packery.Rect );
   }
 
-}( window, function factory( Rect ) {
+}( typeof window !== "undefined" ? window : this || {}, function factory( Rect ) {
 'use strict';
 
 // -------------------------- Packer -------------------------- //
