@@ -42,7 +42,7 @@
     );
   }
 
-}( window, function factory( getSize, Outlayer, Rect, Packer, Item ) {
+}( typeof window !== "undefined" ? window : this || {}, function factory( getSize, Outlayer, Rect, Packer, Item ) {
 'use strict';
 
 // ----- Rect ----- //
